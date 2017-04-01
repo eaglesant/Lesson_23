@@ -26,7 +26,7 @@ post '/visit' do
 
 	@title_mess = 'Thank you!'
 
-	@message = "Dear #{@user_name}, we'll waiting for you at #{@date_time} with #{@barber}"
+	@message = "Dear #{@user_name}, we'll waiting for you at #{@date_time} with #{@barber}, color: #{@color}"
 
 	f = File.open "./public/users.txt", "a"
 
@@ -34,6 +34,6 @@ post '/visit' do
 	f.close
 
 	erb :message
-	
+
 
 end
