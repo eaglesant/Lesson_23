@@ -28,10 +28,6 @@ post '/visit' do
 
 	@message = "Dear #{@user_name}, we'll waiting for you at #{@date_time} with #{@barber}, color: #{@color}"
 
-	# f = File.open "./public/users.txt", "a"
-
-	# f.write "\nUser: #{@user_name}, phone: #{@user_phone}, Email: #{@user_email}, date and time: #{@date_time}, barber: #{@barber}, color: #{@color}"
-	# f.close
 
 	hh = {:user_name => 'Enter name',
 		:user_email => 'Enter email',
@@ -49,12 +45,12 @@ post '/visit' do
 	if @error != ''
 		return erb :visit
 	end
-	
-	# @error = hh.select {|key,value| params[key] == ""}.values
 
-	# if @error
-	# 	return erb :visit
-	# end
+	# f = File.open "./public/users.txt", "a"
+
+	# f.write "\nUser: #{@user_name}, phone: #{@user_phone}, Email: #{@user_email}, date and time: #{@date_time}, barber: #{@barber}, color: #{@color}"
+	# f.close
+	
 	erb :message
 
 
