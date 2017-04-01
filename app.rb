@@ -22,6 +22,7 @@ post '/visit' do
 	@user_phone = params[:user_phone]
 	@date_time = params[:date_time]
 	@barber = params[:barber]
+	@color = params[:colorpicker]
 
 	@title_mess = 'Thank you!'
 
@@ -29,9 +30,10 @@ post '/visit' do
 
 	f = File.open "./public/users.txt", "a"
 
-	f.write "\nUser: #{@user_name}, phone: #{@user_phone}, Email: #{@user_email}, date and time: #{@date_time}, barber: #{@barber}"
+	f.write "\nUser: #{@user_name}, phone: #{@user_phone}, Email: #{@user_email}, date and time: #{@date_time}, barber: #{@barber}, color: #{@color}"
 	f.close
 
 	erb :message
+	
 
 end
